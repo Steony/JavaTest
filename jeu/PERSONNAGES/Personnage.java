@@ -1,8 +1,13 @@
-public class Personnage {
+package PERSONNAGES;
+
+//abstract class est une classe qu'o nne peut pas instancier et mettre new 
+public abstract class Personnage {
     private String nom;
     private String metier;
     private int force;
-    private int vie;
+    // protected package: rend le membre de la classe visible dans toutes les
+    // classes du même dossier package.
+    protected int vie;
 
     /**
      * un constructeur est une méthode qui permet de " construire " (=instancier) un
@@ -23,7 +28,37 @@ public class Personnage {
         this.vie = vie;
     }
 
-    // ajouter pour que dans test pour que le constructeur soit pris en compte
+    // dans une classe on peut avoir plusieurs méthodes avec le même nom. ON APELLE
+    // CA LA SURCHARGE(overload)
+    // la signature doit être différente en ce qui concerne les arguments, soit en
+    // nombre soit en type.
+
+    public Personnage(String nom, int force, int vie) {
+        this.nom = nom;
+        this.force = force;
+        this.vie = vie;
+    }
+
+    // \n retour à la ligne
+    public String fiche() {
+        return "Fiche Personnage \n"
+                + "----------------------"
+                + "\tNom : " + this.nom + "\n"
+                + "\tMétier :" + this.metier + "\n"
+                + "\tPoints de Force :" + this.force + "\n"
+                + "\tPoints de Vie :" + this.vie;
+
+    }
+
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
+
+    // ajouter pour que dans test pour que le constructeur soit pris en compte/
+    // dès que l'on définit un constructeur dans une classe ,le constructeur par
+    // défaut (sans argument) n'est plus accessible.
+    // Pour le rentre accessible à nouveau, il faut le déclarer explicitement dans
+    // la classe.
     public Personnage() {
     }
 

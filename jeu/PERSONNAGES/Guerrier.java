@@ -1,8 +1,17 @@
-
-// EXO ecrire class guerrier hésite de la classe Personnage. valeur propriété doit être comprise entre 1 et 5 
+package PERSONNAGES;
 
 public class Guerrier extends Personnage {
     private int armure = 1;
+
+    public Guerrier(String nom, int vie, int force, String metier, int armure) {
+        // this.setNom();
+        super(nom, metier, vie, force);
+        this.setArmure(armure);
+    }
+
+    public Guerrier() {
+
+    }
 
     public int getArmure() {
         return armure;
@@ -17,5 +26,10 @@ public class Guerrier extends Personnage {
             this.armure = 5;
         }
 
+    }
+
+    public String fiche() {
+        return super.fiche()
+                + "\tPoints d'Armure:" + this.armure + "\n";
     }
 }
