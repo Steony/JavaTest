@@ -1,4 +1,3 @@
-// Classe Test
 public class test {
     public static void main(String[] args) {
         // Création des personnages
@@ -14,6 +13,12 @@ public class test {
         persoMage.setForce(9);
         persoMage.setVie(90);
         persoMage.setMana(100);
+
+        Guerrier guerrier = new Guerrier();
+        guerrier.setNom("Achille");
+        guerrier.setMetier("Guerrier");
+        guerrier.setForce(10); // Devrait être ajusté à 5
+        guerrier.setVie(0); // Devrait être ajusté à 1
 
         // Affichage des points de vie de Conan avant l'attaque
         System.out.println("Points de vie de " + persoGuerrier.getNom() + " : " + persoGuerrier.getVie());
@@ -31,5 +36,8 @@ public class test {
 
         // Affichage des points de vie de Gandalf après l'attaque
         System.out.println("Il reste " + persoMage.getVie() + " points de vie à " + persoMage.getNom());
+
+        // Affichage des caractéristiques du guerrier
+        System.out.println(guerrier.getNom() + " - Force : " + guerrier.getForce() + ", Vie : " + guerrier.getVie());
     }
 }

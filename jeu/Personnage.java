@@ -4,6 +4,29 @@ public class Personnage {
     private int force;
     private int vie;
 
+    /**
+     * un constructeur est une méthode qui permet de " construire " (=instancier) un
+     * objet d'une classe.
+     * il est appelé avec le mot-clé new
+     * Il n'y a pas de type de retour de la définition (=signature) de la méthode.
+     * le nom du constructeur est le nom de la classe
+     * 
+     * @param nom    String
+     * @param metier String
+     * @param force  int
+     * @param vie    int
+     */
+    public Personnage(String nom, String metier, int force, int vie) {
+        this.nom = nom;
+        this.metier = metier;
+        this.force = force;
+        this.vie = vie;
+    }
+
+    // ajouter pour que dans test pour que le constructeur soit pris en compte
+    public Personnage() {
+    }
+
     public void attaque(Personnage cible) {
         // EXO: les points de vie de la cible vont être diminué
         // des points de force de l'attaquant (this)
